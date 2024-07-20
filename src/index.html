@@ -20,17 +20,17 @@
                 <li class="nav-header">
                     XjMind
                 </li>
-                <li>
+                <li {{if eq .RelPath "/login.html"}}class="active"{{end}}>
                     <a href="/login.html">Login / Register</a>
                 </li>
                 <li class="divider"></li>
-                <li>
+                <li {{if eq .RelPath "/create.html"}}class="active"{{end}}>
                     <a href="/create.html">Create</a>
                 </li>
-                <li>
+                <li {{if eq .RelPath "/template.html"}}class="active"{{end}}>
                     <a href="/template.html">Template</a>
                 </li>
-                <li>
+                <li {{if eq .RelPath "/open.html"}}class="active"{{end}}>
                     <a href="/open.html">Open</a>
                 </li>
 
@@ -38,40 +38,40 @@
                 <li class="nav-header">
                     My Works
                 </li>
-                <li>
+                <li {{if eq .RelPath "/files.html"}}class="active"{{end}}>
                     <a href="/files.html">Files</a>
                 </li>
-                <li>
+                <li {{if eq .RelPath "/library.html"}}class="active"{{end}}>
                     <a href="/library.html">Library</a>
                 </li>
-                <li>
+                <li {{if eq .RelPath "/groups.html"}}class="active"{{end}}>
                     <a href="/groups.html">Groups</a>
                 </li>
                 <li class="divider"></li>
-                <li>
+                <li {{if eq .RelPath "/community.html"}}class="active"{{end}}>
                     <a href="/community.html">Community</a>
                 </li>
                 <li class="divider"></li>
                 <li class="nav-header">
                     Settings
                 </li>
-                <li>
+                <li {{if eq .RelPath "/trash.html"}}class="active"{{end}}>
                     <a href="/trash.html">Recently Deleted</a>
                 </li>
-                <li>
+                <li {{if eq .RelPath "/settings.html"}}class="active"{{end}}>
                     <a href="/settings.html">Settings</a>
                 </li>
-                <li>
+                <li {{if eq .RelPath "/premium.html"}}class="active"{{end}}>
                     <a href="/premium.html">Buy Premium</a>
                 </li>
-                <li>
+                <li {{if eq .RelPath "/invite.html"}}class="active"{{end}}>
                     <a href="/invite.html">Invite Friends</a>
                 </li>
-                <li>
+                <li {{if eq .RelPath "/contact.html"}}class="active"{{end}}>
                     <a href="/contact.html">Contact</a>
                 </li>
                 <li>
-                    <a href="/help.html">Help</a>
+                    <a href="https://xjmind.com">Help</a>
                 </li>
                 <li class="divider"></li>
                 <li>
