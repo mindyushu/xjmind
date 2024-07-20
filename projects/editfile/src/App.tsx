@@ -1,13 +1,14 @@
 import { createSignal, type Component } from 'solid-js';
+import '../../corewasm/main';
 
 const App: Component = () => {
-  const [text,setText]=createSignal('text')
+  const [text, setText] = createSignal('text')
 
   return <div>
     <h1>Edit File</h1>
     <span>{text()}</span>
-    <button onclick={()=>{
-      setText(eval('add(1,2,3)'))
+    <button onclick={() => {
+      setText(add(1, 2, 3) + '')
     }}>Do ADD</button>
   </div>;
 };
