@@ -5,7 +5,7 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "vite build && cp dist/index.html ../../src/files/edit.html && cp -r dist/assets ../../src/",
+    "build": "vite build",
     "serve": "vite preview"
   },
   "license": "MIT",
