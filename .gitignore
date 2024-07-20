@@ -1,1 +1,3 @@
 docs/
+src/assets/index*.js
+src/res/wasm/*.wasm
