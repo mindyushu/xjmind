@@ -1,5 +1,5 @@
 import { createSignal, type Component } from 'solid-js';
-import '../../corewasm/main';
+import '../../corewasm/corewasm'
 
 const App: Component = () => {
   const [text, setText] = createSignal('text')
@@ -8,7 +8,7 @@ const App: Component = () => {
     <h1>Edit File</h1>
     <span>{text()}</span>
     <button onclick={() => {
-      setText(add(1, 2, 3) + '')
+      setText(wasm.exports.multiply(1,2) + '')
     }}>Do ADD</button>
   </div>;
 };

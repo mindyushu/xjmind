@@ -8,11 +8,31 @@
   <script src="/res/js/go_wasm_exec.js"></script>
   <script type="text/javascript">
     const go = new Go();
-    WebAssembly.instantiateStreaming(fetch("/res/wasm/core.wasm"), go.importObject).then((result) => {
-      go.run(result.instance);
-    });
+    go.importObject.env = {
+      'add': function (x, y) {
+        return x + y
+      }
+    }
+    var wasm;
+    const WASM_URL = '/res/wasm/core.wasm';
+
+    if ('instantiateStreaming' in WebAssembly) {
+      WebAssembly.instantiateStreaming(fetch(WASM_URL), go.importObject).then(function (obj) {
+        wasm = obj.instance;
+        go.run(wasm);
+      })
+    } else {
+      fetch(WASM_URL).then(resp =>
+        resp.arrayBuffer()
+      ).then(bytes =>
+        WebAssembly.instantiate(bytes, go.importObject).then(function (obj) {
+          wasm = obj.instance;
+          go.run(wasm);
+        })
+      )
+    }
   </script>
-  <script type="module" crossorigin src="/assets/index-BXqL-JXF.js"></script>
+  <script type="module" crossorigin src="/assets/index-C8H39LWF.js"></script>
 </head>
 
 <body>
